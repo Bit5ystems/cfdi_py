@@ -1,4 +1,6 @@
 import json
+import pprint
+from pip._vendor.requests.models import Response
 
 class iTimbre:
 
@@ -9,6 +11,10 @@ class iTimbre:
     urlTarget = object
     request = object
     sandbox = False
+    retcode = object
+    processingTime = object
+    response = object
+    
 
     def __init__(self, debug=False, sanbox=False):
         self.debug = debug
@@ -101,6 +107,10 @@ class iTimbre:
         return False
 
 
+    def handleResponse(self):
+        self.response=self.response.text
+        
+        return
 
 
     # CONSTANTS
